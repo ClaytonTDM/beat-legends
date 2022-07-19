@@ -7,6 +7,7 @@
   <!-- We only include this to explicitly loosen the CSP of various packager environments. It does not provide any security. -->
   <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: blob:">
   <title>Beat Legends</title>
+  <script src="script.js"></script>
   <style>
     body {
       color: #ffffff;
@@ -200,8 +201,7 @@
 
     try {
       setProgress(0.1);
-
-      const scaffolding = new scaffolding.Scaffolding();
+      const scaffolding = new Scaffolding.Scaffolding();
       scaffolding.width = 480;
       scaffolding.height = 360;
       scaffolding.resizeMode = "preserve-ratio";
@@ -331,8 +331,6 @@
         xhr.send();
       });
       })();
-    </script>
-  <script>
     const run = async () => {
       const projectData = await getProjectData();
       await scaffolding.loadProject(projectData);
